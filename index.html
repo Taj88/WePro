@@ -91,6 +91,7 @@
     font-family: "Inter", sans-serif;
     font-weight: 600;
     line-height: 15.6px;
+    vertical-align: middle !important; /* Vertically align middle */
    }
 
    .text-table-data {
@@ -190,6 +191,20 @@
    .technician-column {
     width: auto;
    }
+   /* Custom overrides */
+   .table td, .table th {
+    padding: .75rem;
+    border-top: 1px solid #dee2e6;
+     vertical-align: middle; /* Override vertical-align */
+     text-align: left; /* Override text-align */
+   }
+
+   .table thead th {
+    vertical-align: middle !important; /* Vertically align middle */
+    border-bottom: 2px solid #dee2e6;
+    border-bottom-width: 2px;
+   }
+ 
   </style>
  </head>
  <body>
@@ -408,7 +423,7 @@
        </div>
       </div>
       <div class="table-responsive">
-       <table class="table table-bordered">
+       <table class="table table-bordered table-striped table-hover">
         <thead class="bg-light">
          <tr>
           <th class="text-table-header job-id-column">Job ID</th>
@@ -428,8 +443,8 @@
          <tr>
           <td class="job-id-column">
            <div class="d-flex align-items-center">
-            <input type="checkbox" class="form-check-input me-2" />
-            <a href="#" class="text-link">Job -1161169</a>
+            <input type="checkbox" class="me-2" id="job-1161169" />
+            <label for="job-1161169" class="text-link mb-0" style="padding-left: 12px;">Job -1161169</label>
            </div>
           </td>
           <td class="text-table-data">Melvin Crocker</td>
@@ -467,8 +482,8 @@
          <tr>
           <td class="job-id-column">
            <div class="d-flex align-items-center">
-            <input type="checkbox" class="form-check-input me-2" />
-            <a href="#" class="text-link">Job -1161170</a>
+            <input type="checkbox" class="me-2" id="job-1161170" />
+            <label for="job-1161170" class="text-link mb-0" style="padding-left: 12px;">Job -1161170</label>
            </div>
           </td>
           <td class="text-table-data">John Doe</td>
@@ -506,8 +521,8 @@
          <tr>
           <td class="job-id-column">
            <div class="d-flex align-items-center">
-            <input type="checkbox" class="form-check-input me-2" />
-            <a href="#" class="text-link">Job -1161171</a>
+            <input type="checkbox" class="me-2" id="job-1161171" />
+            <label for="job-1161171" class="text-link mb-0" style="padding-left: 12px;">Job -1161171</label>
            </div>
           </td>
           <td class="text-table-data">Jane Smith</td>
@@ -545,8 +560,8 @@
          <tr>
           <td class="job-id-column">
            <div class="d-flex align-items-center">
-            <input type="checkbox" class="form-check-input me-2" />
-            <a href="#" class="text-link">Job -1161172</a>
+            <input type="checkbox" class="me-2" id="job-1161172" />
+            <label for="job-1161172" class="text-link mb-0" style="padding-left: 12px;">Job -1161172</label>
            </div>
           </td>
           <td class="text-table-data">Alice Johnson</td>
@@ -584,8 +599,8 @@
          <tr>
           <td class="job-id-column">
            <div class="d-flex align-items-center">
-            <input type="checkbox" class="form-check-input me-2" />
-            <a href="#" class="text-link">Job -1161173</a>
+            <input type="checkbox" class="me-2" id="job-1161173" />
+            <label for="job-1161173" class="text-link mb-0" style="padding-left: 12px;">Job -1161173</label>
            </div>
           </td>
           <td class="text-table-data">Bob Brown</td>
@@ -623,8 +638,8 @@
          <tr>
           <td class="job-id-column">
            <div class="d-flex align-items-center">
-            <input type="checkbox" class="form-check-input me-2" />
-            <a href="#" class="text-link">Job -1161174</a>
+            <input type="checkbox" class="me-2" id="job-1161174" />
+            <label for="job-1161174" class="text-link mb-0" style="padding-left: 12px;">Job -1161174</label>
            </div>
           </td>
           <td class="text-table-data">Charlie Davis</td>
@@ -662,8 +677,8 @@
          <tr>
           <td class="job-id-column">
            <div class="d-flex align-items-center">
-            <input type="checkbox" class="form-check-input me-2" />
-            <a href="#" class="text-link">Job -1161175</a>
+            <input type="checkbox" class="me-2" id="job-1161175" />
+            <label for="job-1161175" class="text-link mb-0" style="padding-left: 12px;">Job -1161175</label>
            </div>
           </td>
           <td class="text-table-data">David Evans</td>
