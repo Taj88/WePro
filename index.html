@@ -186,10 +186,13 @@
     gap: 16px;
    }
    .job-id-column {
-    width: 120px; /* Adjusted width */
+    width: 128px; /* Adjusted width */
    }
    .technician-column {
     width: 180px; /* Adjusted width */
+   }
+   .job-type-column {
+    width: auto; /* Reduced width */
    }
   
    @media (max-width: 768px) {
@@ -270,6 +273,11 @@
    .bg-no-answer {
     background-color: #FFC327 !important;
    }
+   .btn-dispatcher-dashboard {
+    background-color: #409640 !important;
+    border-color: #409640 !important;
+    color: white !important;
+   }
   </style>
  </head>
  <body>
@@ -333,7 +341,7 @@
       </div>
      </div>
      <div class="d-flex align-items-center border-bottom border-light p-3">
-      <button class="btn btn-success me-2 btn-no-border">Dispatcher Dashboard</button>
+      <button class="btn btn-dispatcher-dashboard me-2 btn-no-border">Dispatcher Dashboard</button>
       <button class="btn btn-outline-secondary me-2 btn-no-border">Next Item</button>
       <button class="btn btn-outline-secondary me-2 btn-no-border">Next Item</button>
       <button class="btn btn-outline-secondary btn-no-border">Next Item</button>
@@ -496,7 +504,7 @@
           <th class="text-table-header">Client Name <button class="btn btn-link p-0 d-flex align-items-center justify-content-center" style="width: 14px; height: 14px; float: right;" onclick="sortTable(1)"><img src="sort.png" alt="sort" style="width: 14px; height: 14px;" /></button></th>
           <th class="text-table-header">Phone No. <button class="btn btn-link p-0 d-flex align-items-center justify-content-center" style="width: 14px; height: 14px; float: right;" onclick="sortTable(2)"><img src="sort.png" alt="sort" style="width: 14px; height: 14px;" /></button></th>
           <th class="text-table-header">Status <button class="btn btn-link p-0 d-flex align-items-center justify-content-center" style="width: 14px; height: 14px; float: right;" onclick="sortTable(3)"><img src="sort.png" alt="sort" style="width: 14px; height: 14px;" /></button></th>
-          <th class="text-table-header">Job type <button class="btn btn-link p-0 d-flex align-items-center justify-content-center" style="width: 14px; height: 14px; float: right;" onclick="sortTable(4)"><img src="sort.png" alt="sort" style="width: 14px; height: 14px;" /></button></th>
+          <th class="text-table-header job-type-column">Job type <button class="btn btn-link p-0 d-flex align-items-center justify-content-center" style="width: 14px; height: 14px; float: right;" onclick="sortTable(4)"><img src="sort.png" alt="sort" style="width: 14px; height: 14px;" /></button></th>
           <th class="text-table-header">Scheduled <button class="btn btn-link p-0 d-flex align-items-center justify-content-center" style="width: 14px; height: 14px; float: right;" onclick="sortTable(5)"><img src="sort.png" alt="sort" style="width: 14px; height: 14px;" /></button></th>
           <th class="text-table-header">Tag Note <button class="btn btn-link p-0 d-flex align-items-center justify-content-center" style="width: 14px; height: 14px; float: right;" onclick="sortTable(6)"><img src="sort.png" alt="sort" style="width: 14px; height: 14px;" /></button></th>
           <th class="text-table-header technician-column">Technician <button class="btn btn-link p-0 d-flex align-items-center justify-content-center" style="width: 14px; height: 14px; float: right;" onclick="sortTable(7)"><img src="sort.png" alt="sort" style="width: 14px; height: 14px;" /></button></th>
@@ -556,7 +564,7 @@
           <td class="text-table-data">+1234567890</td>
           <td>
            <div class="d-flex flex-column align-items-center">
-            <span class="badge bg-warning text-status">Pending</span>
+            <span class="badge badge-done text-status">Done</span>
             <span class="text-timestamp">5 mins ago</span>
            </div>
           </td>
@@ -595,7 +603,7 @@
           <td class="text-table-data">+0987654321</td>
           <td>
            <div class="d-flex flex-column align-items-center">
-            <span class="badge bg-danger text-status">Rejected</span>
+            <span class="badge badge-done text-status">Done</span>
             <span class="text-timestamp">10 mins ago</span>
            </div>
           </td>
@@ -633,7 +641,7 @@
           <td class="text-table-data">+1122334455</td>
           <td>
            <div class="d-flex flex-column align-items-center">
-            <span class="badge bg-primary text-status">In-progress</span>
+            <span class="badge badge-done text-status">Done</span>
             <span class="text-timestamp">15 mins ago</span>
            </div>
           </td>
@@ -672,7 +680,7 @@
           <td class="text-table-data">+2233445566</td>
           <td>
            <div class="d-flex flex-column align-items-center">
-            <span class="badge bg-info text-status">Submitted</span>
+            <span class="badge badge-done text-status">Done</span>
             <span class="text-timestamp">20 mins ago</span>
            </div>
           </td>
@@ -711,7 +719,7 @@
           <td class="text-table-data">+3344556677</td>
           <td>
            <div class="d-flex flex-column align-items-center">
-            <span class="badge bg-primary text-status">In-progress</span>
+            <span class="badge badge-done text-status">Done</span>
             <span class="text-timestamp">25 mins ago</span>
            </div>
           </td>
