@@ -186,10 +186,17 @@
     gap: 16px;
    }
    .job-id-column {
-    width: 128px;
+    width: 120px; /* Adjusted width */
    }
    .technician-column {
-    width: auto;
+    width: 180px; /* Adjusted width */
+   }
+  
+   @media (max-width: 768px) {
+    .job-id-column,
+    .technician-column {
+     width: auto; /* Make columns auto width on smaller screens */
+    }
    }
    /* Custom overrides */
    .table td, .table th {
@@ -204,7 +211,65 @@
     border-bottom: 2px solid #dee2e6;
     border-bottom-width: 2px;
    }
- 
+   .badge-done {
+    background-color: #DDF9E4;
+    color: #075A39;
+   }
+   .filter-group {
+    gap: 16px;
+   }
+   .dropdown-icon {
+    display: inline-block;
+    width: 8px;
+    height: 5px;
+   }
+   .filters-row {
+    padding-top: 32px;
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px; /* Add gap between Filters and buttons */
+   }
+   .progress-gap {
+    margin-top: 32px;
+   }
+   .btn-no-border {
+    border: none !important;
+   }
+   .progress-bar {
+    margin-right: 1px;
+   }
+   .bg-pending {
+    background-color: #FFC327 !important;
+   }
+   .bg-not-confirmed {
+    background-color: #FF8F6B !important;
+   }
+   .bg-rejected {
+    background-color: #FF6A77 !important;
+   }
+   .bg-confirmed {
+    background-color: #8ACB97 !important;
+   }
+   .bg-appoinments {
+    background-color: #8B87F3 !important;
+   }
+   .bg-submitted {
+    background-color: #76DDF3 !important;
+   }
+   .bg-in-progress {
+    background-color: #5B93FF !important;
+   }
+   .bg-done {
+    background-color: #8ACB9D !important;
+   }
+   .bg-canceled {
+    background-color: #FF6A77 !important;
+   }
+   .bg-no-answer {
+    background-color: #FFC327 !important;
+   }
   </style>
  </head>
  <body>
@@ -268,60 +333,60 @@
       </div>
      </div>
      <div class="d-flex align-items-center border-bottom border-light p-3">
-      <button class="btn btn-success me-2">Dispatcher Dashboard</button>
-      <button class="btn btn-outline-secondary me-2">Next Item</button>
-      <button class="btn btn-outline-secondary me-2">Next Item</button>
-      <button class="btn btn-outline-secondary">Next Item</button>
+      <button class="btn btn-success me-2 btn-no-border">Dispatcher Dashboard</button>
+      <button class="btn btn-outline-secondary me-2 btn-no-border">Next Item</button>
+      <button class="btn btn-outline-secondary me-2 btn-no-border">Next Item</button>
+      <button class="btn btn-outline-secondary btn-no-border">Next Item</button>
      </div>
      <div class="p-3">
-      <div class="mb-4">
-       <h5 class="text-title">Dispatcher Dashboard</h5>
-       <div class="bg-light p-4 rounded border border-light">
+      <div class="mb-0">
+      <h5 class="text-title" style="padding-top: 14px; padding-bottom: 24px;font-size: 24px;">Dispatcher Dashboard</h5>
+       <div class="bg-light p-4 rounded border border-light" style="height: 172px;">
         <h6 class="text-title">Status Overview</h6>
-        <div class="progress mb-3" style="height: 16px">
-         <div class="progress-bar bg-warning" style="width: 1%"></div>
-         <div class="progress-bar bg-danger" style="width: 4%"></div>
-         <div class="progress-bar bg-danger" style="width: 1%"></div>
-         <div class="progress-bar bg-success" style="width: 47%"></div>
-         <div class="progress-bar bg-primary" style="width: 3%"></div>
-         <div class="progress-bar bg-info" style="width: 28%"></div>
-         <div class="progress-bar bg-primary" style="width: 13%"></div>
-         <div class="progress-bar bg-success" style="width: 10%"></div>
-         <div class="progress-bar bg-danger" style="width: 7%"></div>
-         <div class="progress-bar bg-warning" style="width: 2%"></div>
+        <div class="progress mb-3 progress-gap" style="height: 16px">
+         <div class="progress-bar bg-pending" style="width: 1%"></div>
+         <div class="progress-bar bg-not-confirmed" style="width: 13%"></div>
+         <div class="progress-bar bg-rejected" style="width: 6%"></div>
+         <div class="progress-bar bg-confirmed" style="width: 37%"></div>
+         <div class="progress-bar bg-appoinments" style="width: 3%"></div>
+         <div class="progress-bar bg-submitted" style="width: 28%"></div>
+         <div class="progress-bar bg-in-progress" style="width: 4%"></div>
+         <div class="progress-bar bg-done" style="width: 4%"></div>
+         <div class="progress-bar bg-canceled" style="width: 3%"></div>
+         <div class="progress-bar bg-no-answer" style="width: 1%"></div>
         </div>
         <div class="d-flex justify-content-between">
          <div class="d-flex align-items-center">
           <div
-           class="bg-warning rounded-circle me-2"
+           class="bg-pending rounded-circle me-2"
            style="width: 8px; height: 8px"
           ></div>
           <div class="text-timestamp">Pending: 1</div>
          </div>
          <div class="d-flex align-items-center">
           <div
-           class="bg-danger rounded-circle me-2"
+           class="bg-not-confirmed rounded-circle me-2"
            style="width: 8px; height: 8px"
           ></div>
           <div class="text-timestamp">Not confirmed: 26</div>
          </div>
          <div class="d-flex align-items-center">
           <div
-           class="bg-danger rounded-circle me-2"
+           class="bg-rejected rounded-circle me-2"
            style="width: 8px; height: 8px"
           ></div>
           <div class="text-timestamp">Rejected: 1</div>
          </div>
          <div class="d-flex align-items-center">
           <div
-           class="bg-success rounded-circle me-2"
+           class="bg-confirmed rounded-circle me-2"
            style="width: 8px; height: 8px"
           ></div>
           <div class="text-timestamp">Confirmed: 255</div>
          </div>
          <div class="d-flex align-items-center">
           <div
-           class="bg-primary rounded-circle me-2"
+           class="bg-appoinments rounded-circle me-2"
            style="width: 8px; height: 8px"
           ></div>
           <div class="text-timestamp">Appointments: 18</div>
@@ -342,21 +407,21 @@
          </div>
          <div class="d-flex align-items-center">
           <div
-           class="bg-success rounded-circle me-2"
+           class="bg-done rounded-circle me-2"
            style="width: 8px; height: 8px"
           ></div>
           <div class="text-timestamp">Done: 35</div>
          </div>
          <div class="d-flex align-items-center">
           <div
-           class="bg-danger rounded-circle me-2"
+           class="bg-canceled rounded-circle me-2"
            style="width: 8px; height: 8px"
           ></div>
           <div class="text-timestamp">Canceled: 20</div>
          </div>
          <div class="d-flex align-items-center">
           <div
-           class="bg-success rounded-circle me-2"
+           class="bg-no-answer rounded-circle me-2"
            style="width: 8px; height: 8px"
           ></div>
           <div class="text-timestamp">No-answer: 1</div>
@@ -364,44 +429,45 @@
         </div>
        </div>
       </div>
-      <div class="border-top border-light my-4"></div>
-      <div class="d-flex justify-content-between align-items-center mb-3">
+      <div class="border-top border-light" style="margin-top: 32px;"></div>
+      <div class="d-flex justify-content-between align-items-center filters-row">
        <div class="d-flex align-items-center">
-        <div class="text-label me-3">Filters:</div>
-        <div class="d-flex align-items-center">
+        <div class="text-label me-3" style="margin-right: 16px;">Filters:</div>
+        <div class="d-flex align-items-center filter-group">
          <div class="btn-group me-2">
           <button type="button" class="btn btn-light text-filter">
            Status
           </button>
-          <button type="button" class="btn btn-light text-filter">All</button>
+          <button type="button" class="btn btn-light text-filter">All <i class="bi bi-chevron-down dropdown-icon"></i></button>
          </div>
          <div class="btn-group me-2">
-          <button type="button" class="btn btn-light text-filter">
-           Date range
-          </button>
-          <button type="button" class="btn btn-light text-filter">All</button>
+            <button type="button" class="btn btn-light text-filter">
+             <img src="date.png" alt="Date" class="me-2" style="width: 16px; height: 16px;" />
+             Date range
+            </button>
+          <button type="button" class="btn btn-light text-filter">All <i class="bi bi-chevron-down dropdown-icon"></i></button>
          </div>
          <div class="btn-group me-2">
           <button type="button" class="btn btn-light text-filter">
            Source
           </button>
-          <button type="button" class="btn btn-light text-filter">All</button>
+          <button type="button" class="btn btn-light text-filter">All <i class="bi bi-chevron-down dropdown-icon"></i></button>
          </div>
          <div class="btn-group me-2">
           <button type="button" class="btn btn-light text-filter">Agent</button>
-          <button type="button" class="btn btn-light text-filter">All</button>
+          <button type="button" class="btn btn-light text-filter">All <i class="bi bi-chevron-down dropdown-icon"></i></button>
          </div>
          <div class="btn-group me-2">
           <button type="button" class="btn btn-light text-filter">
            Technician
           </button>
-          <button type="button" class="btn btn-light text-filter">All</button>
+          <button type="button" class="btn btn-light text-filter">All <i class="bi bi-chevron-down dropdown-icon"></i></button>
          </div>
          <div class="btn-group">
           <button type="button" class="btn btn-light text-filter">
            Job type
           </button>
-          <button type="button" class="btn btn-light text-filter">All</button>
+          <button type="button" class="btn btn-light text-filter">All <i class="bi bi-chevron-down dropdown-icon"></i></button>
          </div>
         </div>
        </div>
@@ -426,16 +492,16 @@
        <table class="table table-bordered table-striped table-hover">
         <thead class="bg-light">
          <tr>
-          <th class="text-table-header job-id-column">Job ID</th>
-          <th class="text-table-header">Client Name</th>
-          <th class="text-table-header">Phone No.</th>
-          <th class="text-table-header">Status</th>
-          <th class="text-table-header">Job type</th>
-          <th class="text-table-header">Scheduled</th>
-          <th class="text-table-header">Tag Note</th>
-          <th class="text-table-header technician-column">Technician</th>
-          <th class="text-table-header">Source</th>
-          <th class="text-table-header">Updated at</th>
+          <th class="text-table-header job-id-column">Job ID <button class="btn btn-link p-0 d-flex align-items-center justify-content-center" style="width: 14px; height: 14px; float: right;" onclick="sortTable(0)"><img src="sort.png" alt="sort" style="width: 14px; height: 14px;" /></button></th>
+          <th class="text-table-header">Client Name <button class="btn btn-link p-0 d-flex align-items-center justify-content-center" style="width: 14px; height: 14px; float: right;" onclick="sortTable(1)"><img src="sort.png" alt="sort" style="width: 14px; height: 14px;" /></button></th>
+          <th class="text-table-header">Phone No. <button class="btn btn-link p-0 d-flex align-items-center justify-content-center" style="width: 14px; height: 14px; float: right;" onclick="sortTable(2)"><img src="sort.png" alt="sort" style="width: 14px; height: 14px;" /></button></th>
+          <th class="text-table-header">Status <button class="btn btn-link p-0 d-flex align-items-center justify-content-center" style="width: 14px; height: 14px; float: right;" onclick="sortTable(3)"><img src="sort.png" alt="sort" style="width: 14px; height: 14px;" /></button></th>
+          <th class="text-table-header">Job type <button class="btn btn-link p-0 d-flex align-items-center justify-content-center" style="width: 14px; height: 14px; float: right;" onclick="sortTable(4)"><img src="sort.png" alt="sort" style="width: 14px; height: 14px;" /></button></th>
+          <th class="text-table-header">Scheduled <button class="btn btn-link p-0 d-flex align-items-center justify-content-center" style="width: 14px; height: 14px; float: right;" onclick="sortTable(5)"><img src="sort.png" alt="sort" style="width: 14px; height: 14px;" /></button></th>
+          <th class="text-table-header">Tag Note <button class="btn btn-link p-0 d-flex align-items-center justify-content-center" style="width: 14px; height: 14px; float: right;" onclick="sortTable(6)"><img src="sort.png" alt="sort" style="width: 14px; height: 14px;" /></button></th>
+          <th class="text-table-header technician-column">Technician <button class="btn btn-link p-0 d-flex align-items-center justify-content-center" style="width: 14px; height: 14px; float: right;" onclick="sortTable(7)"><img src="sort.png" alt="sort" style="width: 14px; height: 14px;" /></button></th>
+          <th class="text-table-header">Source <button class="btn btn-link p-0 d-flex align-items-center justify-content-center" style="width: 14px; height: 14px; float: right;" onclick="sortTable(8)"><img src="sort.png" alt="sort" style="width: 14px; height: 14px;" /></button></th>
+          <th class="text-table-header">Updated at <button class="btn btn-link p-0 d-flex align-items-center justify-content-center" style="width: 14px; height: 14px; float: right;" onclick="sortTable(9)"><img src="sort.png" alt="sort" style="width: 14px; height: 14px;" /></button></th>
           <th></th>
          </tr>
         </thead>
@@ -451,7 +517,7 @@
           <td class="text-table-data">+12813009960</td>
           <td>
            <div class="d-flex flex-column align-items-center">
-            <span class="badge bg-success text-status">Done</span>
+            <span class="badge badge-done text-status">Done</span>
             <span class="text-timestamp">1 min ago</span>
            </div>
           </td>
@@ -541,8 +607,7 @@
            </div>
           </td>
           <td>
-           <span class="badge bg-light text-dark text-table-data">In PD</span>
-          </td>
+           <span class="badge bg-light text-dark text-table-data">In PD</td>
           <td class="text-table-data technician-column">
            XYZ Appliances Repair Service...
           </td>
@@ -685,7 +750,7 @@
           <td class="text-table-data">+4455667788</td>
           <td>
            <div class="d-flex flex-column align-items-center">
-            <span class="badge bg-success text-status">Done</span>
+            <span class="badge badge-done text-status">Done</span>
             <span class="text-timestamp">30 mins ago</span>
            </div>
           </td>
@@ -881,7 +946,38 @@
   <!-- Bootstrap JS and dependencies -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js"></script>
+  <script>
+let sortDirection = {};
+
+function sortTable(columnIndex) {
+  var table, rows, switching, i, x, y, shouldSwitch, direction, switchCount = 0;
+  table = document.querySelector("table");
+  switching = true;
+  direction = sortDirection[columnIndex] === "asc" ? "desc" : "asc";
+  sortDirection[columnIndex] = direction;
+
+  while (switching) {
+    switching = false;
+    rows = table.rows;
+    for (i = 1; i < (rows.length - 1); i++) {
+      shouldSwitch = false;
+      x = rows[i].getElementsByTagName("TD")[columnIndex];
+      y = rows[i + 1].getElementsByTagName("TD")[columnIndex];
+      if (direction === "asc" && x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase() ||
+          direction === "desc" && x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+      switchCount++;
+    }
+  }
+}
+</script>
  </body>
 </html>
 
